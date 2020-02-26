@@ -1,8 +1,10 @@
 class BaseRepository:
+
     def ConvertFromModel(self, obj):
         return obj.__dict__
 
-    def ConvertToModel(self, dict):
+    @staticmethod
+    def ConvertToModel(self, original_dict):
         modelClasss = self.meta.model()
-        modelClasss .__dict__.update(dict)
+        modelClasss .__dict__.update(original_dict)
         return modelClasss

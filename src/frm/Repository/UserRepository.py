@@ -1,5 +1,6 @@
 from .BaseRepository import BaseRepository
 
+
 class UserRepository(BaseRepository):
     class Meta:
         model = []
@@ -11,5 +12,5 @@ class UserRepository(BaseRepository):
     def get_user_by_name(self, name):
         pass
 
-    def update_user_by_name(self, name, user):
+    def upsert_user(self, user):
         pass

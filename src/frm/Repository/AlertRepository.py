@@ -1,10 +1,13 @@
-from .BaseRepository import BaseRepository
 import os
-from ..Util import Constants  as const
+
+from .BaseRepository import BaseRepository
+from ..Util import Constants as const
+from ..Domain.Alert import Alert
+
 
 class AlertRepository(BaseRepository):
     class Meta:
-        model = []
+        model = Alert
         # TODO model gets Alert class
 
     def __init__(self):
