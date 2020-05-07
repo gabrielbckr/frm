@@ -3,3 +3,5 @@ flask-cors
 pytest
 pymongo
 sqlalchemy
+pyyaml
+mysqlclient
