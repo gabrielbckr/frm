@@ -3,7 +3,7 @@ services:
   database:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: 'testpassword'
+      POSTGRES_ASSWORD: 'testpassword'
       POSTGRES_USER: 'vuser'
       POSTGRES_DB: 'sqlalchemy'
     ports:
