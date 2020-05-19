@@ -82,14 +82,14 @@ def make_mail(alert_list, sender_email, password, receiver_email):
 
     html_alert_string = "\n".join([f"<li>{x}</li>" for x in alert_list])
 
-    mail_body = """\
-    Hi,
-    FRM - Friend Relationship Management alerts
-    It's time to get in touch with these people!
-    """
-    html = f"""\
+    html = f"""
+
     <html>
       <body>
+        <p>
+            Hi, FRM - Friend Relationship Management alerts
+            It's time to get in touch with these people!
+        <p>
         <ul>
             {html_alert_string}
         </ul>
@@ -97,11 +97,9 @@ def make_mail(alert_list, sender_email, password, receiver_email):
     </html>
     """
 
-    part1 = MIMEText(mail_body, "plain")
-    part2 = MIMEText(html, "html")
+    mail_body = MIMEText(html, "html")
 
-    message.attach(part1)
-    message.attach(part2)
+    message.attach(mail_body)
 
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
